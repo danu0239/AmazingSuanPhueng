@@ -18,7 +18,8 @@
         android:id="@+id/textView2"
         android:textSize="@dimen/h1"
         android:textStyle="normal|bold"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:padding="10dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -88,15 +89,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/green"
-                android:id="@+id/imageView4"
+                android:id="@+id/imageView3"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/green"
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView4"
                 android:layout_weight="1" />
+
         </LinearLayout>
 
         <LinearLayout
