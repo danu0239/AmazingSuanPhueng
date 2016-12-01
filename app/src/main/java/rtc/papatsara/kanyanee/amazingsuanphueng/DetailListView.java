@@ -21,7 +21,7 @@ public class DetailListView extends AppCompatActivity {
         setContentView(R.layout.activity_detail_list_view);
 
         anInt = getIntent().getIntExtra("category", 0);
-        Log.d("21novV1", "catetory ==>" + anInt);
+        Log.d("21novV1", "Catetory ==>" + anInt);
 
         try {
             GetRatchaburiWhereCat getRatchaburiWhereCat = new GetRatchaburiWhereCat(DetailListView.this);
@@ -44,7 +44,7 @@ public class DetailListView extends AppCompatActivity {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 nameStrings[i] = jsonObject.getString("Name");
-                datailStrings[i] = jsonObject.getString("Datail");
+                datailStrings[i] = jsonObject.getString("Detail");
                 image1Strings[i] = jsonObject.getString("Image1");
                 image2Strings[i] = jsonObject.getString("Image2");
                 image3Strings[i] = jsonObject.getString("Image3");
