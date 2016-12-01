@@ -3,6 +3,7 @@ package rtc.papatsara.kanyanee.amazingsuanphueng;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,12 +14,16 @@ public class DetailListView extends AppCompatActivity {
 
     // Explicit
     private int anInt;
+    private ListView listView;
+    private String tag1 = "21novV2";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_list_view);
+
+        listView = (ListView) findViewById(R.id.livRatchaburi);
 
         anInt = getIntent().getIntExtra("category", 0);
         Log.d("21novV1", "Catetory ==>" + anInt);
@@ -44,7 +49,7 @@ public class DetailListView extends AppCompatActivity {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 nameStrings[i] = jsonObject.getString("Name");
-                datailStrings[i] = jsonObject.getString("Detail");
+                datailStrings[i] = jsonObject.getString("Deteil");
                 image1Strings[i] = jsonObject.getString("Image1");
                 image2Strings[i] = jsonObject.getString("Image2");
                 image3Strings[i] = jsonObject.getString("Image3");
@@ -52,9 +57,16 @@ public class DetailListView extends AppCompatActivity {
                 latStrings[i] = jsonObject.getString("Lat");
                 lngStrings[i] = jsonObject.getString("Lng");
 
+                Log.d(tag1, "Name(" + i + ") ==>" + nameStrings[i]);
+
 
 
             }   // for
+
+            MyAdepter myAdepter = new MyAdepter(DetailListView.this, nameStrings, image1Strings,
+                    datailStrings);
+            listView.setAdapter(myAdepter);
+
 
 
 

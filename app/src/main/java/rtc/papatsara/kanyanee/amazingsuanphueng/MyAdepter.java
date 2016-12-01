@@ -64,7 +64,6 @@ public class MyAdepter extends BaseAdapter{
         Picasso.with(context).load(imageStrings[position]).into(imageView);
 
 
-
         return view1;
     }
 }   // Main Class
