@@ -43,14 +43,14 @@ public class DetailListView extends AppCompatActivity {
             for (int i = 0; i <jsonArray.length(); i++){
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                nameStrings[i] = jsonObject.get("name");
-                datailStrings[i] = jsonObject.get("datail");
-                image1Strings[i] = jsonObject.get("image1");
-                image2Strings[i] = jsonObject.get("image2");
-                image3Strings[i] = jsonObject.get("image3");
-                image4Strings[i] = jsonObject.get("image4");
-                latStrings[i] = jsonObject.get("lat");
-                lngStrings[i] = jsonObject.get("lng");
+                nameStrings[i] = jsonObject.getString("Name");
+                datailStrings[i] = jsonObject.getString("Datail");
+                image1Strings[i] = jsonObject.getString("Image1");
+                image2Strings[i] = jsonObject.getString("Image2");
+                image3Strings[i] = jsonObject.getString("Image3");
+                image4Strings[i] = jsonObject.getString("Image4");
+                latStrings[i] = jsonObject.getString("Lat");
+                lngStrings[i] = jsonObject.getString("Lng");
 
 
 
