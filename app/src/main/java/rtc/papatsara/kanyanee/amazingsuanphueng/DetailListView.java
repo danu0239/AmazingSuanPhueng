@@ -3,6 +3,8 @@ package rtc.papatsara.kanyanee.amazingsuanphueng;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -16,6 +18,7 @@ public class DetailListView extends AppCompatActivity {
     private int anInt;
     private ListView listView;
     private String tag1 = "21novV2";
+    private Button button;
 
 
     @Override
@@ -24,8 +27,9 @@ public class DetailListView extends AppCompatActivity {
         setContentView(R.layout.activity_detail_list_view);
 
         listView = (ListView) findViewById(R.id.livRatchaburi);
+        button = (Button) findViewById(R.id.button);
 
-        anInt = getIntent().getIntExtra("category", 0);
+        anInt = getIntent().getIntExtra("Category", 0);
         Log.d("21novV1", "Catetory ==>" + anInt);
 
         try {
@@ -74,6 +78,15 @@ public class DetailListView extends AppCompatActivity {
             Log.d("21novV2", "e onCreate ==> " + e.toString());
 
         }
+
+
+        //Button Controller
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
     }   // Main Method
