@@ -1,7 +1,7 @@
 package rtc.papatsara.kanyanee.amazingsuanphueng;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class DetailListView extends AppCompatActivity {
-
 
 
     // Explicit
@@ -36,7 +35,7 @@ public class DetailListView extends AppCompatActivity {
             GetRatchaburiWhereCat getRatchaburiWhereCat = new GetRatchaburiWhereCat(DetailListView.this);
             getRatchaburiWhereCat.execute(Integer.toString(anInt));
             String strJSON = getRatchaburiWhereCat.get();
-            Log.d("21novV2","JSON (" + anInt + ")==> " + strJSON);
+            Log.d("21novV2", "JSON (" + anInt + ")==> " + strJSON);
 
             JSONArray jsonArray = new JSONArray(strJSON);
 
@@ -49,7 +48,7 @@ public class DetailListView extends AppCompatActivity {
             String[] latStrings = new String[jsonArray.length()];
             String[] lngStrings = new String[jsonArray.length()];
 
-            for (int i = 0; i <jsonArray.length(); i++){
+            for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 nameStrings[i] = jsonObject.getString("Name");
@@ -64,7 +63,6 @@ public class DetailListView extends AppCompatActivity {
                 Log.d(tag1, "Name(" + i + ") ==>" + nameStrings[i]);
 
 
-
             }   // for
 
             MyAdepter myAdepter = new MyAdepter(DetailListView.this, nameStrings, image1Strings,
@@ -72,9 +70,7 @@ public class DetailListView extends AppCompatActivity {
             listView.setAdapter(myAdepter);
 
 
-
-
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("21novV2", "e onCreate ==> " + e.toString());
 
         }
