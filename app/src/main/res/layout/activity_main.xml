@@ -21,7 +21,8 @@
         android:textStyle="normal|bold"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:textColor="#f0134e" />
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColorLink="?attr/actionMenuTextColor" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -66,7 +67,8 @@
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="#ff5b94" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorLink="?attr/actionMenuTextColor" />
 
             <TextView
                 android:text="@string/cat2"
@@ -78,7 +80,8 @@
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="#ff5b94" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorLink="?attr/actionMenuTextColor" />
 
         </LinearLayout>
 
@@ -121,7 +124,8 @@
                 android:elevation="0dp"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="#ff5b94" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorLink="?attr/actionMenuTextColor" />
 
             <TextView
                 android:text="@string/cat4"
@@ -134,7 +138,8 @@
                 android:elevation="0dp"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="#ff5b94" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColorLink="?attr/actionMenuTextColor" />
 
         </LinearLayout>
 
