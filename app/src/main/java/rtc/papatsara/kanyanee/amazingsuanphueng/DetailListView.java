@@ -1,8 +1,11 @@
 package rtc.papatsara.kanyanee.amazingsuanphueng;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,9 +13,11 @@ import org.json.JSONObject;
 public class DetailListView extends AppCompatActivity {
 
 
-
     // Explicit
     private int anInt;
+    private ListView listView;
+    private String tag1 = "21novV2";
+    private Button button;
 
 
     @Override
@@ -20,14 +25,17 @@ public class DetailListView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_list_view);
 
-        anInt = getIntent().getIntExtra("category", 0);
-        Log.d("21novV1", "catetory ==>" + anInt);
+        listView = (ListView) findViewById(R.id.livRatchaburi);
+        button = (Button) findViewById(R.id.button);
+
+        anInt = getIntent().getIntExtra("Category", 0);
+        Log.d("21novV1", "Catetory ==>" + anInt);
 
         try {
             GetRatchaburiWhereCat getRatchaburiWhereCat = new GetRatchaburiWhereCat(DetailListView.this);
             getRatchaburiWhereCat.execute(Integer.toString(anInt));
             String strJSON = getRatchaburiWhereCat.get();
-            Log.d("21novV2","JSON (" + anInt + ")==> " + strJSON);
+            Log.d("21novV2", "JSON (" + anInt + ")==> " + strJSON);
 
             JSONArray jsonArray = new JSONArray(strJSON);
 
@@ -40,28 +48,41 @@ public class DetailListView extends AppCompatActivity {
             String[] latStrings = new String[jsonArray.length()];
             String[] lngStrings = new String[jsonArray.length()];
 
-            for (int i = 0; i <jsonArray.length(); i++){
+            for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                nameStrings[i] = jsonObject.get("name");
-                datailStrings[i] = jsonObject.get("datail");
-                image1Strings[i] = jsonObject.get("image1");
-                image2Strings[i] = jsonObject.get("image2");
-                image3Strings[i] = jsonObject.get("image3");
-                image4Strings[i] = jsonObject.get("image4");
-                latStrings[i] = jsonObject.get("lat");
-                lngStrings[i] = jsonObject.get("lng");
+                nameStrings[i] = jsonObject.getString("Name");
+                datailStrings[i] = jsonObject.getString("Deteil");
+                image1Strings[i] = jsonObject.getString("Image1");
+                image2Strings[i] = jsonObject.getString("Image2");
+                image3Strings[i] = jsonObject.getString("Image3");
+                image4Strings[i] = jsonObject.getString("Image4");
+                latStrings[i] = jsonObject.getString("Lat");
+                lngStrings[i] = jsonObject.getString("Lng");
 
+                Log.d(tag1, "Name(" + i + ") ==>" + nameStrings[i]);
 
 
             }   // for
 
+            MyAdepter myAdepter = new MyAdepter(DetailListView.this, nameStrings, image1Strings,
+                    datailStrings);
+            listView.setAdapter(myAdepter);
 
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("21novV2", "e onCreate ==> " + e.toString());
 
         }
+
+
+        //Button Controller
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
     }   // Main Method

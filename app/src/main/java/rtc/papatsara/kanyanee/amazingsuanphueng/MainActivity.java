@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } //Swith
 
         Intent intent = new Intent(MainActivity.this, DetailListView.class);
-        intent.putExtra("category", i);
+        intent.putExtra("Category", i);
         startActivity(intent);
 
 

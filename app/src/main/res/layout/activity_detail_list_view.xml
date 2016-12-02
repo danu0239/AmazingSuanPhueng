@@ -11,7 +11,7 @@
     tools:context="rtc.papatsara.kanyanee.amazingsuanphueng.DetailListView">
 
     <TextView
-        android:text="TextView"
+        android:text="สถานที่ท่องเที่ยว"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
