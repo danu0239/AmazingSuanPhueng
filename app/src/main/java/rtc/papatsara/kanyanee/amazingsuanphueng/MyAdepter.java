@@ -61,7 +61,10 @@ public class MyAdepter extends BaseAdapter{
         //Show View
         titleTextView.setText(titleString[position]);
         detailTaxtView.setText(detailString[position]);
-        Picasso.with(context).load(imageStrings[position]).into(imageView);
+        Picasso.with(context)
+                .load(imageStrings[position])
+                .resize(1300,500)
+                .into(imageView);
 
 
         return view1;

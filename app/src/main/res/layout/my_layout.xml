@@ -18,9 +18,9 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_height="150dp"
-        android:padding="370dp"
-        android:layout_width="match_parent" />
+        android:layout_height="@dimen/icon"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:text="TextView"
