@@ -63,7 +63,7 @@ public class MyAdepter extends BaseAdapter{
         detailTaxtView.setText(detailString[position]);
         Picasso.with(context)
                 .load(imageStrings[position])
-                .resize(1300,500)
+                .resize(1400,700)
                 .into(imageView);
 
 
