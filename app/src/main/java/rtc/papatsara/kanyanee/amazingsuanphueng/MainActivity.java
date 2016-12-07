@@ -4,18 +4,25 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Eeplicit
     private ImageView cat1ImageView,cat2ImageView,cat3ImageView,cat4ImageView;
+    //Bind Widget การผูกตัวแปร
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         cat1ImageView = (ImageView) findViewById(R.id.imageView);
@@ -27,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cat2ImageView.setOnClickListener(this);
         cat3ImageView.setOnClickListener(this);
         cat4ImageView.setOnClickListener(this);
-
 
 
 

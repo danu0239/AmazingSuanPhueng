@@ -1,11 +1,17 @@
 package rtc.papatsara.kanyanee.amazingsuanphueng;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,7 +24,6 @@ public class DetailListView extends AppCompatActivity {
     private ListView listView;
     private String tag1 = "21novV2";
     private Button button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

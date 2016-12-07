@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="rtc.papatsara.kanyanee.amazingsuanphueng.MainActivity"
-    android:background="@drawable/bg9">
+    android:background="@drawable/bg99">
 
     <TextView
         android:text="@string/titleMain"
@@ -39,14 +39,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/b"
+                app:srcCompat="@drawable/ic4"
                 android:id="@+id/imageView"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/c"
+                app:srcCompat="@drawable/ic3"
                 android:id="@+id/imageView2"
                 android:layout_weight="1" />
 
@@ -67,7 +67,7 @@
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="?android:attr/colorPressedHighlight"
                 android:textColorLink="?attr/actionMenuTextColor" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="?android:attr/colorPressedHighlight"
                 android:textColorLink="?attr/actionMenuTextColor" />
 
         </LinearLayout>
@@ -95,14 +95,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/d"
+                app:srcCompat="@drawable/ic2"
                 android:id="@+id/imageView3"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/e"
+                app:srcCompat="@drawable/ic1"
                 android:id="@+id/imageView4"
                 android:layout_weight="1" />
 
@@ -124,7 +124,7 @@
                 android:elevation="0dp"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="?android:attr/colorPressedHighlight"
                 android:textColorLink="?attr/actionMenuTextColor" />
 
             <TextView
@@ -138,7 +138,7 @@
                 android:elevation="0dp"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textColor="?android:attr/colorPressedHighlight"
                 android:textColorLink="?attr/actionMenuTextColor" />
 
         </LinearLayout>

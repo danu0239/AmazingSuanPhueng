@@ -19,7 +19,7 @@
         android:textSize="@dimen/h1"
         android:textStyle="normal|bold"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+        android:textColor="#0011cc" />
 
     <Button
         android:text="Back"
