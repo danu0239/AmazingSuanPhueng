@@ -1,57 +1,90 @@
 package rtc.papatsara.kanyanee.amazingsuanphueng;
 
-import android.content.Context;
+
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+
+import android.widget.AdapterView;
+
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
+
+
+import com.squareup.okhttp.Request;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.imageView;
+import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.livRatchaburi;
+import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.text;
+import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.text2;
+import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.textView2;
+
 
 public class DetailListView extends AppCompatActivity {
 
 
     // Explicit
     private int anInt;
-    private ListView listView;
+    private android.widget.ListView listView;
     private String tag1 = "21novV2";
     private Button button;
+    //Explicit การประกาศตัวแปร
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_list_view);
 
-        listView = (ListView) findViewById(R.id.livRatchaburi);
+        listView = (android.widget.ListView) findViewById(R.id.livRatchaburi);
         button = (Button) findViewById(R.id.button);
+
+
+
+
+
+        //Button Controller
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }   // onClick
+        });
+
+
+
+
+        // Main Method กลุ่มของคำสั่ง
+
 
         anInt = getIntent().getIntExtra("Category", 0);
         Log.d("21novV1", "Catetory ==>" + anInt);
 
         try {
-            GetRatchaburiWhereCat getRatchaburiWhereCat = new GetRatchaburiWhereCat(DetailListView.this);
-            getRatchaburiWhereCat.execute(Integer.toString(anInt));
-            String strJSON = getRatchaburiWhereCat.get();
+            GetRatchaburiWhereCat getRatchaburiWhereCat1 = new GetRatchaburiWhereCat(DetailListView.this);
+            getRatchaburiWhereCat1.execute(Integer.toString(anInt));
+            String strJSON = getRatchaburiWhereCat1.get();
             Log.d("21novV2", "JSON (" + anInt + ")==> " + strJSON);
 
             JSONArray jsonArray = new JSONArray(strJSON);
 
-            String[] nameStrings = new String[jsonArray.length()];
-            String[] datailStrings = new String[jsonArray.length()];
-            String[] image1Strings = new String[jsonArray.length()];
-            String[] image2Strings = new String[jsonArray.length()];
-            String[] image3Strings = new String[jsonArray.length()];
-            String[] image4Strings = new String[jsonArray.length()];
-            String[] latStrings = new String[jsonArray.length()];
-            String[] lngStrings = new String[jsonArray.length()];
+            final String[] nameStrings = new String[jsonArray.length()];
+            final String[] datailStrings = new String[jsonArray.length()];
+            final String[] image1Strings = new String[jsonArray.length()];
+            final String[] image2Strings = new String[jsonArray.length()];
+            final String[] image3Strings = new String[jsonArray.length()];
+            final String[] image4Strings = new String[jsonArray.length()];
+            final String[] latStrings = new String[jsonArray.length()];
+            final String[] lngStrings = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -74,6 +107,24 @@ public class DetailListView extends AppCompatActivity {
                     datailStrings);
             listView.setAdapter(myAdepter);
 
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(DetailListView.this, Detail2Activity.class);
+                    intent.putExtra("Title", nameStrings[position]);
+                    intent.putExtra("Image", image1Strings[position]);
+                    intent.putExtra("Detail", datailStrings[position]);
+                    startActivity(intent);
+                }
+            });
+
+
+
+
+
+
+
+
+
 
         } catch (Exception e) {
             Log.d("21novV2", "e onCreate ==> " + e.toString());
@@ -88,7 +139,6 @@ public class DetailListView extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
-
-    }   // Main Method
 }   // Main Class

@@ -14,7 +14,7 @@ import com.squareup.okhttp.Response;
  * Created by ACER on 21/11/2559.
  */
 
-public class GetRatchaburiWhereCat extends AsyncTask<String, Void, String>{
+public class GetRatchaburiWhereCat extends AsyncTask<String, Void, String> {
 
     // Explicit
     private Context context;
@@ -37,14 +37,18 @@ public class GetRatchaburiWhereCat extends AsyncTask<String, Void, String>{
             Request.Builder builder = new Request.Builder();
             Request request = builder.url(urlJSON).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
-            return  response.body().string();
+            return response.body().string();
 
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("21novV2", "e doIn ==>" + e.toString());
             return null;
         }
-
-
     }
-}   // Main Class
+}
+
+
+
+
+
+

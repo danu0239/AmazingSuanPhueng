@@ -53,20 +53,20 @@ public class SuanAdapter extends BaseAdapter{
         View view = layoutInflater.inflate(R.layout.activity_detail_list_view, parent, false);
 
         //Bind Widged
-        titleTextView = (TextView) view.findViewById(R.id.textView2);
+        titleTextView = (TextView) view.findViewById(R.id.textView);
         detailTextView = (TextView) view.findViewById(R.id.textView3);
-        imageView = (ImageView) view.findViewById(R.id.imageView);
+        imageView = (ImageView) view.findViewById(R.id.imageView5);
 
         // Show View
         titleTextView.setText(titleStrings[position]);
 
         // การตัดคำ โดยจะแสดงแค่ 30 ตัวอักษรเท่านั้น แต่ถ้าน้อยกว่า 30 ตัวอักษรให้แสดงทั้งหมด
-        if (detailStrings[position].length() <= 30) {
+        if (detailStrings[position].length() <= 20) {
             // รายละเอียด น้อยกว่า 30 ตัวอักษร
             detailTextView.setText(detailStrings[position]);
         } else {
             // มากกว่า 30 ตัวอักษร
-            detailTextView.setText(detailStrings[position].substring(0, 30) + "...");
+            detailTextView.setText(detailStrings[position].substring(0, 20) + "...");
         }
 
         //Change image การเปลี่ยนรูปตามต้องการ
