@@ -22,6 +22,7 @@ public class MyAdepter extends BaseAdapter{
     private TextView titleTextView, detailTaxtView;
     private ImageView imageView;
 
+
     public MyAdepter(Context context,
                      String[] titleString,
                      String[] imageStrings,
@@ -30,7 +31,12 @@ public class MyAdepter extends BaseAdapter{
         this.titleString = titleString;
         this.imageStrings = imageStrings;
         this.detailString = detailString;
+
     }
+
+
+
+
 
     @Override
     public int getCount() {
@@ -65,6 +71,17 @@ public class MyAdepter extends BaseAdapter{
                 .load(imageStrings[position])
                 .resize(1400,700)
                 .into(imageView);
+
+        if (detailString[position].length() <= 55) {
+            // รายละเอียด น้อยกว่า 30 ตัวอักษร
+            detailTaxtView.setText(detailString[position]);
+        } else {
+            // มากกว่า 30 ตัวอักษร
+            detailTaxtView.setText(detailString[position].substring(0, 55) + "...");
+        }
+
+
+
 
 
         return view1;

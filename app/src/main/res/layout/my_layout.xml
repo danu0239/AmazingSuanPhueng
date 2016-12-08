@@ -21,21 +21,25 @@
         android:id="@+id/imageView5"
         android:layout_height="@dimen/icon"
         android:layout_width="match_parent"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="left|center_horizontal" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:minHeight="0dp"
+        android:nestedScrollingEnabled="false">
 
         <TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/textView3"
             android:textSize="@dimen/h2"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:fontFamily="@android:string/httpErrorUnsupportedScheme"
+            android:enabled="false"
             android:layout_weight="1" />
     </LinearLayout>
+
 </LinearLayout>

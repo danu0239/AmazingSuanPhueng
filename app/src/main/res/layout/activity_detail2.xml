@@ -24,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/button2"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:id="@+id/linsuan">
 
         <TextView
             android:text="TextView"
@@ -33,12 +34,13 @@
             android:id="@+id/textView4"
             android:textSize="@dimen/h1"
             android:textStyle="normal|bold"
-            android:textColor="@android:color/background_dark" />
+            android:textColor="@android:color/holo_green_dark"
+            android:fontFamily="@string/common_google_play_services_install_title" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/icon"
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView2"
             android:layout_margin="20dp" />
 
         <ScrollView
@@ -46,7 +48,7 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:padding="20dp"
-            android:background="#82eeeaea">
+            android:background="#d6fdfcfc">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,8 +61,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5"
                     android:textSize="@dimen/h2"
-                    android:textStyle="normal|italic"
-                    android:textColor="@android:color/background_dark" />
+                    android:textColor="#09aa06"
+                    android:fontFamily="@string/common_open_on_phone" />
             </LinearLayout>
         </ScrollView>
 

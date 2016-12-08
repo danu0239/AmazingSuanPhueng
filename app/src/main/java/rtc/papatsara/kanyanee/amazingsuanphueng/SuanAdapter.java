@@ -10,6 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by ACER on 16/10/2559.
  */
@@ -18,15 +20,16 @@ public class SuanAdapter extends BaseAdapter{
 
     // Explicit ทำการประกาศตัวแปร
     private Context context;    // ท่อที่ใช้ส่งข้อมูล
-    private String[] titleStrings, detailStrings;
+    private String[] titleStrings, detailStrings, imageStrings;
     private int[] ints;
     private TextView titleTextView, detailTextView;
     private ImageView imageView;
 
-    public SuanAdapter (Context context, String[] titleStrings, String[] detailStrings, int[] ints) {
+    public SuanAdapter (Context context, String[] titleStrings,String[] imageStrings, String[] detailStrings, int[] ints) {
         this.context = context;
         this.titleStrings = titleStrings;
         this.detailStrings = detailStrings;
+        this.imageStrings = imageStrings;
         this.ints = ints;
     }
 
@@ -55,7 +58,15 @@ public class SuanAdapter extends BaseAdapter{
         //Bind Widged
         titleTextView = (TextView) view.findViewById(R.id.textView);
         detailTextView = (TextView) view.findViewById(R.id.textView3);
-        imageView = (ImageView) view.findViewById(R.id.imageView5);
+        imageView = (ImageView) view.findViewById(R.id.imageView2);
+
+        //Show View
+        titleTextView.setText(titleStrings[position]);
+        detailTextView.setText(detailStrings[position]);
+        Picasso.with(context)
+                .load(imageStrings[position])
+                .resize(1400,700)
+                .into(imageView);
 
         // Show View
         titleTextView.setText(titleStrings[position]);
