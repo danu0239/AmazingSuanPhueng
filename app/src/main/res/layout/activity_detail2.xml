@@ -37,11 +37,33 @@
             android:textColor="@android:color/holo_green_dark"
             android:fontFamily="@string/common_google_play_services_install_title" />
 
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/icon"
-            android:id="@+id/imageView2"
-            android:layout_margin="20dp" />
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_height="match_parent"
+                app:srcCompat="@mipmap/back"
+                android:id="@+id/imageView6"
+                android:layout_weight="1"
+                android:layout_width="0dp" />
+
+            <ImageView
+                android:layout_height="@dimen/icon"
+                android:id="@+id/imageView2"
+                android:layout_weight="5"
+                android:layout_width="0dp" />
+
+            <ImageView
+                android:layout_height="match_parent"
+                app:srcCompat="@mipmap/next"
+                android:id="@+id/imageView7"
+                android:layout_weight="1"
+                android:layout_width="0dp" />
+
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
