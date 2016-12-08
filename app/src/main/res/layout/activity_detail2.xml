@@ -47,6 +47,7 @@
                 android:layout_height="match_parent"
                 app:srcCompat="@mipmap/back"
                 android:id="@+id/imageView6"
+                android:onClick="clickBackImage"
                 android:layout_weight="1"
                 android:layout_width="0dp" />
 
@@ -60,6 +61,7 @@
                 android:layout_height="match_parent"
                 app:srcCompat="@mipmap/next"
                 android:id="@+id/imageView7"
+                android:onClick="clickNextImage"
                 android:layout_weight="1"
                 android:layout_width="0dp" />
 
