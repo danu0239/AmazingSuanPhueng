@@ -2,29 +2,15 @@ package rtc.papatsara.kanyanee.amazingsuanphueng;
 
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
 import android.view.View;
-
 import android.widget.AdapterView;
-
 import android.widget.Button;
-import android.widget.ListView;
-
-
-import com.squareup.okhttp.Request;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.imageView;
-import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.livRatchaburi;
-import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.text;
-import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.text2;
-import static rtc.papatsara.kanyanee.amazingsuanphueng.R.id.textView2;
 
 
 public class DetailListView extends AppCompatActivity {
@@ -38,7 +24,6 @@ public class DetailListView extends AppCompatActivity {
     //Explicit การประกาศตัวแปร
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +31,6 @@ public class DetailListView extends AppCompatActivity {
 
         listView = (android.widget.ListView) findViewById(R.id.livRatchaburi);
         button = (Button) findViewById(R.id.button);
-
-
-
 
 
         //Button Controller
@@ -59,8 +41,6 @@ public class DetailListView extends AppCompatActivity {
 
             }   // onClick
         });
-
-
 
 
         // Main Method กลุ่มของคำสั่ง
@@ -111,12 +91,14 @@ public class DetailListView extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(DetailListView.this, Detail2Activity.class);
                     intent.putExtra("Title", nameStrings[position]);
-                    intent.putExtra("Image", image1Strings[position]);
+                    intent.putExtra("Image1", image1Strings[position]);
+                    intent.putExtra("Image2", image2Strings[position]);
+                    intent.putExtra("Image3", image3Strings[position]);
+                    intent.putExtra("Image4", image4Strings[position]);
                     intent.putExtra("Detail", datailStrings[position]);
                     startActivity(intent);
                 }
             });
-
 
 
         } catch (Exception e) {
